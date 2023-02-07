@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 
-import { INotification } from './interfaces/notification.interface';
+import type { INotification } from './interfaces/notification.interface';
 import { NotificationService } from './notification.service';
 
 @Controller('/push')

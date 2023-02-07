@@ -2,20 +2,6 @@ import { Button } from './components/Button';
 import { api } from './services/api.service';
 import { getSubscripton } from './utils/getSubscription';
 
-async function registerServiceWorker() {
-  try {
-    const subscription = await getSubscripton();
-
-    await api.post('/push/register', {
-      subscription,
-    });
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-registerServiceWorker();
-
 function App() {
   function showNotification() {
     window.Notification.requestPermission((permission) => {
